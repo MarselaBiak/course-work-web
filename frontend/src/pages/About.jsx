@@ -1,4 +1,3 @@
-// src/pages/About.jsx
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -9,7 +8,6 @@ import balanceIcon from "../assets/home-page/balace_icon.png";
 import logo2 from "../assets/home-page/LOGO2.png";
 import cardsImg from "../assets/home-page/image12.png";
 import { useCart } from "../context/CartContext";
-// src/pages/Home.jsx
 
 const About = () => {
 
