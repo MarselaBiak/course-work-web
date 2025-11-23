@@ -154,7 +154,7 @@ const Cart = () => {
             <section className="products-section-on-cart">
                 <div className="cart-page">
                     {cart.length === 0 ? (
-                        <p className="cart-empty">Your cart is empty</p>
+                        <p className="cart-empty"></p>
                     ) : (
                         cart.map(item => (
                             <CartItem key={item.id} item={item} />

@@ -71,6 +71,8 @@ export const deleteOrderItem = async (req, res) => {
 
         order.items = order.items.filter(item => item.id !== Number(itemId));
 
+        order.total = order.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
         if (order.items.length === before)
             return res.status(404).json({ message: "Item not found" });
 
