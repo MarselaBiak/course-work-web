@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+VN+Guides&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.home-page{
+    min-height: 100vh;
+}
+
+body {
+    background-color: #FFF;
+}
+
+
+/* ====== SIDE MENU (левое выезжающее) ====== */
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;              /* на всю высоту окна */
+    width: 320px;               /* ширина панели */
+    background-color: #fff;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.25);
+    padding: 40px 40px;
+    z-index: 1000;
+    transition: left 0.35s ease;
+    left: -320px;
+    /* по умолчанию СПРЯТАНО за левым краем */
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;      /* чтобы по скрытому меню нельзя было кликнуть */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* когда добавляем класс .open — панель выезжает */
+.side-menu.open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.menu-open .home-page {
+    transform: translateX(190px);
+}
+
+.menu-open .side-menu {
+    left: 0;
+}
+
+.menu-open .header-burger {
+    transform: translateX(190px);
+}
+
+
+/* кнопка закрытия (крестик) */
+.close-menu-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    background: none;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* список ссылок в меню */
+.menu-list {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+}
+
+.menu-list a {
+    color: #665F5F;
+    text-align: right;
+    font-family: Montserrat;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 200%; /* 46px */
+    text-decoration: none;
+}
+
+.menu-list a.bold {
+    font-weight: 700;
+}
+
+
+/* header */
+
+.home-page {
+    width: 1920px;
+    margin: 0 auto;
+    position: relative;
+    transition: transform 0.35s ease;
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: #FFF;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.25);
+    display: flex;
+    justify-content: center;
+    z-index: 9999; /* максимально сверху */
+}
+
+.header-inner {
+    width: 1400px;           
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 20px;
+}
+
+.header-burger {
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.25);
+    cursor: pointer;
+    transition: transform 0.35s ease; /* плавный сдвиг */
+}
+
+.header-burger,
+.header-burger:focus,
+.header-burger:active {
+    outline: none;
+}
+
+
+.span-1-header, .span-2-header {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #665F5F;
+    border-radius: 3px;
+}
+
+.span-2-header {
+    width: 14px;
+    align-self: flex-end;
+}
+
+.icon-button {
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
+}
+
+.cart-button {
+    width: 95px;
+    height: 47.5px;
+    background: #fff;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* main */
+
+.hero {
+    margin-top: 100px;
+    width: 100%;
+    height: 800px;
+    background: url("../assets/home-page/background_main.png") center/cover no-repeat;
+}
+
+.signup {
+    color: #FFF;
+    text-align: center;
+    text-shadow: 3px 3px 14px rgba(137, 137, 137, 0.40);
+    font-family: Montserrat;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 122%; /* 58.56px */
+    letter-spacing: -2.16px;
+    text-transform: uppercase;
+}
+
+.text-input-signup input{
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.56);
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
+    width: 500px;
+    height: 40px;
+    flex-shrink: 0;
+    color : #ffffff;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size:  24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 122%; /* 29.28px */
+    letter-spacing: -1.08px;
+    font-family: Montserrat;
+    transition: 0.5s;
+}
+.text-input-signup input:focus{
+    border-radius: 5px;
+    background: rgba(196, 192, 192, 0.56);
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
+    width: 543px;
+    height: 53px;
+    flex-shrink: 0;
+    color : #ffffff;
+    border: none;
+    outline: none;
+}
+
+.text-input-signup p {
+    color: #FFF;
+    text-align: left;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 122%; /* 29.28px */
+    letter-spacing: -1.08px;
+}
+
+.check-box-hero {
+    display: flex;
+    gap: 12px;
+}
+
+.check-box-hero input {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    background: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    transition: 
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease,
+        background-size 0.25s ease,
+        transform 0.2s ease;
+}
+
+.check-box-hero input:active {
+    transform: scale(0.9);
+}
+
+.check-box-hero input:checked {
+    background: #ffffff;
+    border-color: #ffffff;
+    box-shadow: 0 0 0 2px #e58aa5;
+
+    background-image: url("data:image/svg+xml;utf8,<svg fill='none' stroke='%23e58aa5' stroke-width='5' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M5 13l4 4L19 7'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+    background-size: 80%;
+}
+
+.check-box-hero label {
+    cursor: pointer;
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 122%; /* 29.28px */
+    letter-spacing: -1.08px;
+}
+
+
+
+
+
+.btn-hero {
+    width: 236.18px;
+    height: 63.174px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #FFF;
+    color: #665F5F;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 124.182%; /* 29.804px */
+    transition: 1s;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-hero:hover {
+    scale: 1.03;
+    border: none;
+    outline: none;
+}
+
+.btn-hero:active {
+    scale: 0.9;
+    border: none;
+    outline: none;
+}
+
+.btn-hero:focus {
+    border: none;
+    outline: none;
+}
+
+.signup-link {
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0 4px 13px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 124.182%; /* 29.804px */
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.inputs-signup-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.text-input-signup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.signup-link:hover {
+    text-decoration: underline white;
+    color: #FFF;
+}
+
+
+
+.logo-header {
+    padding-left: 110px;
+}

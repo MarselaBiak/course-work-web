@@ -1,0 +1,142 @@
+
+
+
+.orders-page {
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.order-block {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto 25px auto;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid #ada6a6;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* Верхняя панель */
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    background: #fafafa;
+    cursor: pointer;
+    font-size: 16px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+}
+
+/* Контент не должен быть слишком светлым */
+.order-header h3,
+.order-header p,
+.order-status {
+    color: #444 !important;
+}
+
+/* Статус */
+.order-status {
+    background: #efefef;
+    padding: 5px 12px;
+    border-radius: 12px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+/* Кнопка стрелки */
+.order-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #665F5F; 
+    transition: 0.3s;
+}
+
+.order-toggle-btn:hover{
+    scale: 1.02;
+    outline: none;
+    border: none;
+}
+
+.order-toggle-btn:focus{
+    outline: none;
+    border: none;
+}
+
+.order-toggle-btn:active{
+    outline: none;
+    border: none;
+}
+
+
+/* Контент заказа */
+.order-content {
+    padding: 20px 25px;
+    background: #fff;
+}
+
+/* Внутренние карточки */
+.order-item-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    gap: 20px;
+    border-bottom: 1px solid #665F5F;
+    font-size: 15px;
+}
+
+.order-item-img {
+    width: 114.729px;
+    height: 97.244px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.order-item-info h4 {
+    color: #665F5F;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 124.182%; /* 29.804px */
+}
+
+.order-item-price {
+    color: #665F5F;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 124.182%; /* 29.804px */
+}
+
+.order-item-qty {
+    color: #665F5F;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 124.182%; /* 14.902px */
+}
+
+.order-item-total {
+    color: #665F5F;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 124.182%; /* 29.804px */
+}
+
+
+
+
+
+

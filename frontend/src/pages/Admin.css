@@ -1,0 +1,291 @@
+.main-header-admin {
+    width: 1920px;
+    height: 99.823px;
+    flex-shrink: 0;
+    background: #FFF;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-admin {
+    color: black;
+    width: 1125px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.main-admin h1{
+    color: #665F5F;
+    font-family: Montserrat;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 124.182%; /* 69.542px */
+    text-transform: uppercase;
+}
+
+.users-panel h2{
+    color: #665F5F; 
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 124.182%; /* 29.804px */
+}
+
+.users-panel {
+    margin-bottom: 50px;
+    color: #665F5F;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 124.182%; /* 14.902px */
+}
+
+.delete-user-btn {
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 124.182%; /* 14.902px */
+    width:120.689px;
+    height: 40.125px;
+    flex-shrink: 0;
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.25));
+    border-radius: 5px;
+    background: #665F5F;
+    transition: 0.3s;
+}
+
+.delete-user-btn:hover {
+    background-color: red ;
+    scale: 1.03;
+    outline: none;
+    border: none;
+}
+
+.delete-user-btn:focus {
+    background-color: red ;
+    scale: 1.03;
+    outline: none;
+    border: none;
+}
+
+.users-panel {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.users-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.h2-orders-user-panel {
+    color: #665F5F; 
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 124.182%; /* 29.804px */   
+}
+
+.user-order-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+
+.h3-user-panel {
+    color: #665F5F;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 124.182%; /* 14.902px */
+}
+
+.p-user-panel {
+    color: #665F5F;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 124.182%; /* 19.869px */
+}
+
+.plus-user-panel-btn {
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 124.182%; /* 14.902px */
+    width: 50.689px;
+    height: 40.125px;
+    flex-shrink: 0;
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.25));
+    border-radius: 5px;
+    background: #665F5F;
+    transition: 0.3s;
+}
+
+.plus-user-panel-btn:hover {
+    background-color: #464040 ;
+    scale: 1.03;
+    outline: none;
+    border: none;
+}
+
+.plus-user-panel-btn:focus {
+    background-color: #464040 ;
+    scale: 1.03;
+    outline: none;
+    border: none;
+}
+
+.minus-user-panel-btn {
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 124.182%; /* 14.902px */
+    width: 50.689px;
+    height: 40.125px;
+    flex-shrink: 0;
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.25));
+    border-radius: 5px;
+    background: #665F5F;
+    transition: 0.3s;
+}
+
+.minus-user-panel-btn:hover {
+    background-color: #464040 ;
+    scale: 1.03;
+    outline: none;
+    border: none;
+}
+
+.minus-user-panel-btn:focus {
+    background-color: #464040 ;
+    scale: 1.03;
+    outline: none;
+    border: none;
+}
+
+.delete-user-panel-btn {
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 124.182%; /* 14.902px */
+    width:150.689px;
+    height: 40.125px;
+    flex-shrink: 0;
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.25));
+    border-radius: 5px;
+    background: #665F5F;
+    transition: 0.3s;
+}
+
+.delete-user-panel-btn:hover {
+    background-color: red ;
+    scale: 1.03;
+    outline: none;
+    border: none;
+}
+
+.delete-user-panel-btn:focus {
+    background-color: red ;
+    scale: 1.03;
+    outline: none;
+    border: none;
+}
+
+.no-orders {
+    color: #aca8a8;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 124.182%; /* 19.869px */
+}
+
+
+
+.delete-order-panel-btn {
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 124.182%; /* 14.902px */
+    width:200.689px;
+    height: 60.125px;
+    flex-shrink: 0;
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.25));
+    border-radius: 5px;
+    background: #665F5F;
+    transition: 0.3s;
+    margin-bottom: 30px;
+}
+
+.delete-order-panel-btn:hover {
+    background-color: red ;
+    scale: 1.03;
+    outline: none;
+    border: none;
+}
+
+.delete-order-panel-btn:focus {
+    background-color: red ;
+    scale: 1.03;
+    outline: none;
+    border: none;
+}
+
+.product-user-panel {
+    color: #665F5F;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 124.182%; /* 19.869px */
+}
+
+.product-user-panel {
+    display: flex;
+    justify-content: space-between;
+    width: 850px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btn-cont-panel {
+    width: 300px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+

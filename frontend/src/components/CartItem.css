@@ -1,0 +1,118 @@
+.cart-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 5px 0 40px 0 ;
+    gap: 40px;
+    border-top: #b4afaf 0.5px solid;
+    border-bottom: #b4afaf 0.5px solid;
+}
+
+.cart-item-img {
+    width: 214.729px;
+    height: 197.244px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-title {
+    color: #665F5F;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 124.182%; /* 29.804px */
+}
+
+.cart-item-price {
+    color: #665F5F;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 124.182%; /* 29.804px */
+}
+
+.cart-item-size {
+    margin-top: 8px;
+    color: #665F5F;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 124.182%; /* 14.902px */
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #665F5F;
+    transition: 0.2s ;
+}
+
+.cart-delete-btn:hover {
+    color: #ff5050;
+    outline: none;
+    border: none;
+}
+
+.cart-delete-btn:focus {
+    outline: none;
+    border: none;
+}
+
+.cart-delete-btn:active{
+    outline: none;
+    border: none;
+}
+
+.cart-item-total {
+    width: 140px;
+    text-align: right;
+    font-size: 22px;
+    font-weight: 700;
+    color: #5c5454;
+}
+
+.cart-cont-item {
+    width: 1125px;
+    height: 265px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin: 0 auto;
+}
+
+.cart-delete-btn:hover {
+    animation: shake 0.4s infinite;
+    scale: 1.02;
+}
+
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+}
+
+
+
+
+
+
+

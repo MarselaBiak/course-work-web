@@ -1,0 +1,45 @@
+.counter-box {
+    width: 120px;
+    height: 40px;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #d2d2d2;
+    padding: 0 12px;
+    font-family: Montserrat;
+    font-size: 20px;
+    color: #665F5F;
+}
+
+.counter-box button {
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    color: #665F5F;
+    cursor: pointer;
+    padding: 0 8px;
+    transition: 0.2s;
+}
+
+.counter-box button:hover {
+    transform: scale(1.2);
+}
+
+.counter-box span {
+    font-weight: 600;
+    width: 30px;
+    text-align: center;
+}
+
+.counter-box button:active {
+    outline: none;
+    border: none;
+}
+
+.counter-box button:focus {
+    outline: none;
+    border: none;
+}
+

@@ -1,0 +1,151 @@
+
+.recent-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 289.159px;
+    height: 384.158px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #FFF;
+    overflow: hidden;
+    box-shadow: -1px -1px 4px 0 rgba(0, 0, 0, 0.25), 4px 4px 8px 0 rgba(0, 0, 0, 0.25);
+}
+
+.recent-img {
+    width: 300px;
+    height: 292px;
+    object-fit: cover;
+
+}
+
+.card-text-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.recent-title {
+    width: 142.902px;
+    color: #665F5F;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 124.182%; /* 14.902px */
+}
+
+.recent-price {
+    color: #665F5F;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 124.182%; /* 14.902px */
+}
+
+.btn-dark { 
+    width: 113.689px;
+    height: 32.125px;
+    flex-shrink: 0;
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.25));
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    background-color: #665F5F;
+    line-height: 124.182%; /* 14.902px */
+}
+
+.btn-pink {
+    width: 113.689px;
+    height: 32.125px;
+    flex-shrink: 0;
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.25));
+    background-color: #FFD1D7;
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 124.182%; /* 14.902px */
+
+}
+
+.recently-viewed-section {
+    padding: 0 0 100px 0 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.no-recent {
+    color: #665F5F;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 124.182%; /* 29.804px */
+    text-transform: uppercase;
+}
+
+.btn-dark-big{
+    width: 236.18px;
+    height: 63.174px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #665F5F;
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 124.182%; /* 29.804px */
+    transition: 0.4s;
+}
+
+.btn-dark-big:hover {
+    outline: none;
+    border: none;
+    scale: 1.03;
+}
+.btn-dark-big:active {
+    outline: none;
+    border: none;
+}
+.btn-dark-big:focus {
+    outline: none;
+    border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
