@@ -45,7 +45,7 @@ const SignIn = () => {
             if (res.data.user.role === "admin") {
                 navigate("/admin");
             } else {
-                navigate("/home");
+                navigate("/");
             }
 
         } catch (error) {
