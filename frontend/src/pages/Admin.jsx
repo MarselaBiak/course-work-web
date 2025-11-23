@@ -1,6 +1,4 @@
 /* eslint-disable react-hooks/set-state-in-effect */
-
- 
 import "./About.css";
 import "./Admin.css";
 import logoHeader from "../assets/home-page/logo.png";
@@ -64,7 +62,6 @@ const Admin = () => {
         loadOrdersByUsers();
     };
 
-
     const deleteUser = async (id) => {
         try {
             const token = localStorage.getItem("token");
@@ -91,10 +88,6 @@ const Admin = () => {
         loadUsers();
         loadOrdersByUsers();
     }, []);
-
-
-    
-
 
     return (
         <div className="home-page">

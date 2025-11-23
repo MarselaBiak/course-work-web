@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import AddToCartButton from "../components/AddToCartButton";
@@ -18,16 +17,12 @@ const Settings= () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-
-    // ✔ массив заказов
     const [orders, setOrders] = useState([]);
 
 
     const raw = localStorage.getItem("user");
         const user = raw ? JSON.parse(raw) : null;
         const userId = user?.id;
-
-
 
     const handleLogout = () => {
     localStorage.removeItem("token");
@@ -41,7 +36,7 @@ const Settings= () => {
     }, []);
 
     useEffect(() => {
-        if (!userId) return;   // <-- важный FIX!!
+        if (!userId) return;   
 
         axios.get(`http://localhost:5000/api/orders/${userId}`)
             .then(res => setOrders(res.data))
@@ -63,9 +58,6 @@ const Settings= () => {
 
     return (
         <div className={`home-page ${isMenuOpen ? "menu-open" : ""}`}>
-
-
-            {/* ---------- MOBILE MENU ---------- */}
             <div className={`side-menu ${isMenuOpen ? "open" : ""}`}>
                 <button className="close-menu-btn" onClick={() => setIsMenuOpen(false)}>×</button>
 
@@ -76,7 +68,6 @@ const Settings= () => {
                     <Link to="/catalog">Catalog</Link>
                     <Link to="/contacts">Contacts</Link>
 
-                    {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ ЗАЛОГИНЕН === */}
                     {!user && (
                         <>
                             <Link to="/signin" className="bold">Sign in</Link>
@@ -84,7 +75,6 @@ const Settings= () => {
                         </>
                     )}
 
-                    {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ ЗАЛОГИНЕН === */}
                     {user && (
                         <div className="user-block">
                             <Link to="/settings" >
@@ -99,32 +89,26 @@ const Settings= () => {
 
             </div>
 
-            {/* ---------- OVERLAY (тёмный фон) ---------- */}
             {isMenuOpen && (
                 <div className="menu-overlay" onClick={() => setIsMenuOpen(false)}></div>
             )}
 
-            {/* ---------- HEADER ---------- */}
             <header className="main-header">
                 <div className="header-inner">
                     
-                    {/* LEFT — burger */}
                     <button className="header-burger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         <span className="span-1-header"></span>
                         <span className="span-2-header"></span>
                     </button>
 
-                    {/* CENTER — logo */}
                     <img className="logo-header" src={logoHeader} alt="logo" />
 
-                    {/* RIGHT — icons */}
                     <div className="header-right">
                         <Link to="/search">
                             <button className="icon-button">
                                 <img src={searchIcon} alt="search" />
                             </button>
                         </Link>
-
 
                         <Link to="/cart">
                             <button className="cart-button">
@@ -140,8 +124,6 @@ const Settings= () => {
                 </div>
             </header>
 
-            
-
             <main className="orders-page">
 
                 {orders.length === 0 && (
@@ -151,7 +133,6 @@ const Settings= () => {
                 {orders.map((order) => (
                     <div key={order._id} className="order-block">
 
-                        {/* ===== Верхняя панель заказа ===== */}
                         <div className="order-header" onClick={() => toggleOrder(order._id)}>
                             
                             <div>
@@ -170,7 +151,6 @@ const Settings= () => {
                             </button>
                         </div>
 
-                        {/* ===== Сворачиваемая часть ===== */}
                         {order.open && (
                             <div className="order-content">
 
@@ -209,13 +189,6 @@ const Settings= () => {
                 ))}
 
             </main>
-
-
-
-
-            
-                        
-                
 
         <footer className="footer-bar">
             <img src={logo2} alt="" />

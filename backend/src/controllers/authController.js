@@ -2,7 +2,6 @@ import User from "../models/User.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
-// ------------------ REGISTER ------------------
 router.post("/signup", async (req, res) => {
     console.log("SIGNUP REQUEST BODY:", req.body);
 
@@ -22,7 +21,6 @@ router.post("/signup", async (req, res) => {
             return res.status(400).json({ message: "Email already exists" });
         }
 
-        // ⛔ Админ может существовать только один
         if (nickname.toLowerCase() === "admin") {
             const existingAdmin = await User.findOne({ role: "admin" });
 
@@ -33,7 +31,6 @@ router.post("/signup", async (req, res) => {
             }
         }
 
-        // 🎯 Выставляем роль
         const role = nickname.toLowerCase() === "admin" ? "admin" : "user";
 
         const user = await User.create({
@@ -55,8 +52,6 @@ router.post("/signup", async (req, res) => {
 });
 
 
-
-// ===================== LOGIN =====================
 router.post("/login", async (req, res) => {
     console.log("LOGIN REQUEST BODY:", req.body);
 
@@ -79,7 +74,7 @@ router.post("/login", async (req, res) => {
         }
 
         const token = jwt.sign(
-            { id: user._id, role: user.role },   // 🎯 ДОБАВИЛИ ROLE В JWT
+            { id: user._id, role: user.role },   
             process.env.JWT_SECRET,
             { expiresIn: "7d" }
         );

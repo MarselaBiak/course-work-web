@@ -12,9 +12,6 @@ import AddToCartWithCounter from "../components/AddToCartWithCounter";
 import { useCart } from "../context/CartContext";
 import "./ProductPage.css";
 
-
-// ВАЖНО — импортируем картинку товара!
-
 const Product1Page = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,7 +53,6 @@ const Product1Page = () => {
     return (
         <div className={`home-page ${isMenuOpen ? "menu-open" : ""}`}>
             
-            {/* ---------- MOBILE MENU ---------- */}
             <div className={`side-menu ${isMenuOpen ? "open" : ""}`}>
                 <button className="close-menu-btn" onClick={() => setIsMenuOpen(false)}>×</button>
 
@@ -67,7 +63,6 @@ const Product1Page = () => {
                     <Link to="/catalog">Catalog</Link>
                     <Link to="/contacts">Contacts</Link>
 
-                    {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ ЗАЛОГИНЕН === */}
                     {!user && (
                         <>
                             <Link to="/signin" className="bold">Sign in</Link>
@@ -75,7 +70,6 @@ const Product1Page = () => {
                         </>
                     )}
 
-                    {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ ЗАЛОГИНЕН === */}
                     {user && (
                         <div className="user-block">
                             <Link to="/settings" >
@@ -87,10 +81,8 @@ const Product1Page = () => {
                         </div>
                     )}
                 </nav>
-
             </div>
 
-            {/* HEADER */}
             <header className="main-header">
                 <div className="header-inner">
 
@@ -121,7 +113,6 @@ const Product1Page = () => {
                 </div>
             </header>
 
-            {/* PRODUCT PAGE */}
             <main className="hero-product">
                 <div className="product-h1-cont">
                     <h2 className="product-h1">Home / Cristal (pink carnations with mix flowers)</h2>
@@ -137,11 +128,8 @@ const Product1Page = () => {
                         <p className="shipping-text">Shipping calculated at checkout</p>
 
                         <div className="product-buy-block">
-
                             <AddToCartWithCounter className="btn-dark" productId={1}    />
-
                         </div>
-
                         <p className="pickup-text">
                             Pickup available at <span>Hollywood blvd</span> Usually ready tomorrow
                         </p>
@@ -175,7 +163,6 @@ const Product1Page = () => {
                 </div>
             </section>
                     
-            {/* FOOTER */}
             <footer className="footer-bar">
                 <img src={logo2} alt="" />
                 <p className="footer-bar-text">

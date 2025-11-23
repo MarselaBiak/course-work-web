@@ -12,8 +12,6 @@ import AddToCartWithCounter from "../components/AddToCartWithCounter";
 import { useCart } from "../context/CartContext";
 import "./ProductPage.css";
 
-
-
 const Product5Page = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -55,7 +53,6 @@ const Product5Page = () => {
     return (
         <div className={`home-page ${isMenuOpen ? "menu-open" : ""}`}>
             
-            {/* ---------- MOBILE MENU ---------- */}
             <div className={`side-menu ${isMenuOpen ? "open" : ""}`}>
                 <button className="close-menu-btn" onClick={() => setIsMenuOpen(false)}>×</button>
 
@@ -66,7 +63,6 @@ const Product5Page = () => {
                     <Link to="/catalog">Catalog</Link>
                     <Link to="/contacts">Contacts</Link>
 
-                    {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ ЗАЛОГИНЕН === */}
                     {!user && (
                         <>
                             <Link to="/signin" className="bold">Sign in</Link>
@@ -74,7 +70,6 @@ const Product5Page = () => {
                         </>
                     )}
 
-                    {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ ЗАЛОГИНЕН === */}
                     {user && (
                         <div className="user-block">
                             <Link to="/settings" >
@@ -89,7 +84,6 @@ const Product5Page = () => {
 
             </div>
 
-            {/* HEADER */}
             <header className="main-header">
                 <div className="header-inner">
 
@@ -120,7 +114,6 @@ const Product5Page = () => {
                 </div>
             </header>
 
-            {/* PRODUCT PAGE */}
             <main className="hero-product">
                 <div className="product-h1-cont">
                     <h2 className="product-h1">Home / Cristal (pink carnations with mix flowers)</h2>
@@ -174,7 +167,6 @@ const Product5Page = () => {
                 </div>
             </section>
                     
-            {/* FOOTER */}
             <footer className="footer-bar">
                 <img src={logo2} alt="" />
                 <p className="footer-bar-text">

@@ -1,6 +1,3 @@
-
-
-// src/pages/Home.jsx
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -19,17 +16,14 @@ import cardsImg from "../assets/home-page/image12.png";
 
 const Cart = () => {
 
-    
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const user = JSON.parse(localStorage.getItem("user"));
 
     console.log("LOCAL STORAGE USER RAW =", localStorage.getItem("user"));
     console.log("PARSED USER =", user);
 
-
     const [sellerNotes, setSellerNotes] = useState("");
     const [giftMessage, setGiftMessage] = useState("");
-
 
     const { cart, totalPrice } = useCart();
 
@@ -72,12 +66,9 @@ const Cart = () => {
         }
     };
 
-
     return (
         <div className={`home-page ${isMenuOpen ? "menu-open" : ""}`}>
 
-
-            {/* ---------- MOBILE MENU ---------- */}
             <div className={`side-menu ${isMenuOpen ? "open" : ""}`}>
                 <button className="close-menu-btn" onClick={() => setIsMenuOpen(false)}>×</button>
 
@@ -88,7 +79,6 @@ const Cart = () => {
                     <Link to="/catalog">Catalog</Link>
                     <Link to="/contacts">Contacts</Link>
 
-                    {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ ЗАЛОГИНЕН === */}
                     {!user && (
                         <>
                             <Link to="/signin" className="bold">Sign in</Link>
@@ -96,7 +86,6 @@ const Cart = () => {
                         </>
                     )}
 
-                    {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ ЗАЛОГИНЕН === */}
                     {user && (
                         <div className="user-block">
                             <Link to="/settings" >
@@ -111,32 +100,26 @@ const Cart = () => {
 
             </div>
 
-            {/* ---------- OVERLAY (тёмный фон) ---------- */}
             {isMenuOpen && (
                 <div className="menu-overlay" onClick={() => setIsMenuOpen(false)}></div>
             )}
 
-            {/* ---------- HEADER ---------- */}
             <header className="main-header">
                 <div className="header-inner">
                     
-                    {/* LEFT — burger */}
                     <button className="header-burger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         <span className="span-1-header"></span>
                         <span className="span-2-header"></span>
                     </button>
 
-                    {/* CENTER — logo */}
                     <img className="logo-header" src={logoHeader} alt="logo" />
 
-                    {/* RIGHT — icons */}
                     <div className="header-right">
                         <Link to="/search">
                             <button className="icon-button">
                                 <img src={searchIcon} alt="search" />
                             </button>
                         </Link>
-
 
                         <Link to="/cart">
                             <button className="cart-button">
@@ -146,13 +129,10 @@ const Cart = () => {
                                 </span>
                             </button>
                         </Link>
-                        
                     </div>
-
                 </div>
-            </header>  
-
-            {/* ---------- HERO SECTION ---------- */}
+            </header> 
+            
             <main className="hero-section-cart">
                 <div className="cont-section-all">
                     <div className="cont-sec-1-text">
@@ -170,10 +150,9 @@ const Cart = () => {
                     </div>
                 </div>
             </main>
-            
+    
             <section className="products-section-on-cart">
                 <div className="cart-page">
-
                     {cart.length === 0 ? (
                         <p className="cart-empty">Your cart is empty</p>
                     ) : (
@@ -181,15 +160,11 @@ const Cart = () => {
                             <CartItem key={item.id} item={item} />
                         ))
                     )}
-
                 </div>
             </section>
 
-
             <section className="pay-section">
-
                 <div className="form-area">
-                    
                     <div className="field-group">
                         <label htmlFor="seller-notes">Special instructions for seller</label>
                         <textarea
@@ -201,7 +176,6 @@ const Cart = () => {
                     </div>
 
                     <div className="form-and-btn">
-
                         <div className="field-group">
                             <label htmlFor="gift-message">Gift message</label>
                             <textarea
@@ -223,20 +197,12 @@ const Cart = () => {
                             <button className="check-out-btn" onClick={handleCheckout}>Check out</button>    
                         </div>
                     </div>
-
                 </div>  
-    
-
             </section>            
-
-            {/* ---------- PRODUCTS ---------- */}
 
             <section className="special-offer" >
             <h2 className="sp-of-title">SPECIAL OFFER</h2>
-
             <div className="top-grid">
-
-                {/* -- CARD 1 -- */}
                 <div className="top-card">
                     <Link to="/product/1" >
                         <div className="product1"></div>
@@ -250,7 +216,6 @@ const Cart = () => {
                     </div>
                 </div>
     
-                {/* -- CARD 3 -- */}
                 <div className="top-card">
                     <Link to="/product/3" >
                         <div className="product3"></div>
@@ -264,7 +229,6 @@ const Cart = () => {
                     </div>
                 </div>        
 
-                {/* -- CARD 6 -- */}
                 <div className="top-card">
                 <Link to="/product/6" >
                     <div className="product6"></div>
@@ -277,9 +241,7 @@ const Cart = () => {
                         <AddToCartButton className="btn-dark" productId={6} />
                     </div>
                 </div>    
-
             </div>
-            
             <div className="top-more-wrap">
                 <Link to="/catalog">           
                     <button className="btn-more">Show more</button>
@@ -287,7 +249,6 @@ const Cart = () => {
             </div>
         </section>
                 
-
         <footer className="footer-bar">
             <img src={logo2} alt="" />
             <p className="footer-bar-text">

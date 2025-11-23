@@ -1,4 +1,3 @@
-// src/pages/Search.jsx
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
@@ -26,10 +25,8 @@ const Search = () => {
     };
     const { totalPrice } = useCart();
     
-    // ОДНО ПРАВИЛЬНОЕ СОСТОЯНИЕ
     const [results, setResults] = useState([]);
 
-    // ОДНА ПРАВИЛЬНАЯ handleSearch
     const handleSearch = async (query) => {
         console.log("Search triggered:", query);
 
@@ -55,9 +52,6 @@ const Search = () => {
 
     return (
         <div className={`home-page ${isMenuOpen ? "menu-open" : ""}`}>
-
-
-            {/* ---------- MOBILE MENU ---------- */}
             <div className={`side-menu ${isMenuOpen ? "open" : ""}`}>
                 <button className="close-menu-btn" onClick={() => setIsMenuOpen(false)}>×</button>
 
@@ -68,7 +62,6 @@ const Search = () => {
                     <Link to="/catalog">Catalog</Link>
                     <Link to="/contacts">Contacts</Link>
 
-                    {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ ЗАЛОГИНЕН === */}
                     {!user && (
                         <>
                             <Link to="/signin" className="bold">Sign in</Link>
@@ -76,7 +69,6 @@ const Search = () => {
                         </>
                     )}
 
-                    {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ ЗАЛОГИНЕН === */}
                     {user && (
                         <div className="user-block">
                             <Link to="/settings" >
@@ -91,25 +83,20 @@ const Search = () => {
 
             </div>
 
-            {/* ---------- OVERLAY (тёмный фон) ---------- */}
             {isMenuOpen && (
                 <div className="menu-overlay" onClick={() => setIsMenuOpen(false)}></div>
             )}
 
-            {/* ---------- HEADER ---------- */}
             <header className="main-header">
                 <div className="header-inner">
                     
-                    {/* LEFT — burger */}
                     <button className="header-burger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         <span className="span-1-header"></span>
                         <span className="span-2-header"></span>
                     </button>
 
-                    {/* CENTER — logo */}
                     <img className="logo-header" src={logoHeader} alt="logo" />
 
-                    {/* RIGHT — icons */}
                     <div className="header-right">
                         <Link to="/search">
                             <button className="icon-button">
@@ -131,19 +118,13 @@ const Search = () => {
                 </div>
             </header>
 
-            {/* ---------- HERO SECTION ---------- */}
             <main className="hero-search">
-
-
                 <div className="hero-content-search">
                     <h1 className="hero-title-search">
                         SEARCH
                     </h1>
-
                     <SearchBar onSearch={handleSearch} />
-                    
                 </div>
-
             </main>
 
             <section className="serch-section-class">

@@ -5,14 +5,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-
-
 import logoHeader from "../assets/home-page/logo.png";
 import searchIcon from "../assets/home-page/search_icon.png";
 import balanceIcon from "../assets/home-page/balace_icon.png";
 import { useCart } from "../context/CartContext";
-
-
 
 const SignIn = () => {
 
@@ -46,7 +42,6 @@ const SignIn = () => {
                 localStorage.setItem("user", JSON.stringify(res.data.user)); // 🎯 сохраняем ROLE
             }
 
-            // 🎯 РЕДИРЕКТ ПО РОЛИ
             if (res.data.user.role === "admin") {
                 navigate("/admin");
             } else {
@@ -73,8 +68,6 @@ const SignIn = () => {
     return (
         <div className={`home-page ${isMenuOpen ? "menu-open" : ""}`}>
 
-
-            {/* ---------- MOBILE MENU ---------- */}
                 <div className={`side-menu ${isMenuOpen ? "open" : ""}`}>
                     <button className="close-menu-btn" onClick={() => setIsMenuOpen(false)}>×</button>
 
@@ -85,7 +78,6 @@ const SignIn = () => {
                         <Link to="/catalog">Catalog</Link>
                         <Link to="/contacts">Contacts</Link>
 
-                        {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ ЗАЛОГИНЕН === */}
                         {!user && (
                             <>
                                 <Link to="/signin" className="bold">Sign in</Link>
@@ -93,7 +85,6 @@ const SignIn = () => {
                             </>
                         )}
 
-                        {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ ЗАЛОГИНЕН === */}
                         {user && (
                             <div className="user-block">
                                 <Link to="/settings" >
@@ -108,25 +99,20 @@ const SignIn = () => {
 
                 </div>
 
-            {/* ---------- OVERLAY (тёмный фон) ---------- */}
             {isMenuOpen && (
                 <div className="menu-overlay" onClick={() => setIsMenuOpen(false)}></div>
             )}
 
-            {/* ---------- HEADER ---------- */}
             <header className="main-header">
                 <div className="header-inner">
                     
-                    {/* LEFT — burger */}
                     <button className="header-burger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         <span className="span-1-header"></span>
                         <span className="span-2-header"></span>
                     </button>
 
-                    {/* CENTER — logo */}
                     <img className="logo-header" src={logoHeader} alt="logo" />
 
-                    {/* RIGHT — icons */}
                     <div className="header-right">
                         <Link to="/search">
                             <button className="icon-button">
@@ -148,7 +134,6 @@ const SignIn = () => {
                 </div>
             </header>
 
-            {/* ---------- HERO SECTION ---------- */}
             <main className="hero">
                 <div className="hero-content">
                     <h1 className="signin">Sing in</h1>
@@ -169,11 +154,8 @@ const SignIn = () => {
                     <Link to="/signup" className="signin-link">
                         i dont have an account
                     </Link>
-
                 </div>
-
             </main>
-            
         </div>
     );
 };

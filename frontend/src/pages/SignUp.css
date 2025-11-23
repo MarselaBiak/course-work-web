@@ -13,29 +13,24 @@ body {
     background-color: #FFF;
 }
 
-
-/* ====== SIDE MENU (левое выезжающее) ====== */
-
 .side-menu {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;              /* на всю высоту окна */
-    width: 320px;               /* ширина панели */
+    height: 100vh;             
+    width: 320px;              
     background-color: #fff;
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.25);
     padding: 40px 40px;
     z-index: 1000;
     transition: left 0.35s ease;
     left: -320px;
-    /* по умолчанию СПРЯТАНО за левым краем */
     transform: translateX(-100%);
     opacity: 0;
-    pointer-events: none;      /* чтобы по скрытому меню нельзя было кликнуть */
+    pointer-events: none;      
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* когда добавляем класс .open — панель выезжает */
 .side-menu.open {
     transform: translateX(0);
     opacity: 1;
@@ -54,8 +49,6 @@ body {
     transform: translateX(190px);
 }
 
-
-/* кнопка закрытия (крестик) */
 .close-menu-btn {
     position: absolute;
     top: 20px;
@@ -67,7 +60,6 @@ body {
     cursor: pointer;
 }
 
-/* список ссылок в меню */
 .menu-list {
     margin-top: 80px;
     display: flex;
@@ -84,7 +76,7 @@ body {
     font-size: 23px;
     font-style: normal;
     font-weight: 400;
-    line-height: 200%; /* 46px */
+    line-height: 200%;
     text-decoration: none;
 }
 
@@ -92,8 +84,6 @@ body {
     font-weight: 700;
 }
 
-
-/* header */
 
 .home-page {
     width: 1920px;
@@ -112,7 +102,7 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.25);
     display: flex;
     justify-content: center;
-    z-index: 9999; /* максимально сверху */
+    z-index: 9999; 
 }
 
 .header-inner {
@@ -137,7 +127,7 @@ body {
     gap: 4px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.25);
     cursor: pointer;
-    transition: transform 0.35s ease; /* плавный сдвиг */
+    transition: transform 0.35s ease; 
 }
 
 .header-burger,
@@ -192,8 +182,6 @@ body {
     align-items: center;
     gap: 15px;
 }
-
-/* main */
 
 .hero {
     margin-top: 100px;
@@ -311,10 +299,6 @@ body {
     line-height: 122%; /* 29.28px */
     letter-spacing: -1.08px;
 }
-
-
-
-
 
 .btn-hero {
     width: 236.18px;

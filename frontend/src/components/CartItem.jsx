@@ -10,17 +10,14 @@ const CartItem = ({ item }) => {
     return (
         <div className="cart-item">
             <div className="cart-cont-item">
-                {/* Фото */}
                 <img src={item.img} alt={item.title} className="cart-item-img" />
 
-                {/* Информация */}
                 <div className="cart-item-info">
                     <h3 className="cart-item-title">{item.title}</h3>
                     <p className="cart-item-price">${item.price}</p>
                     <p className="cart-item-size">Size: medium</p>
                 </div>
 
-                {/* Counter + delete */}
                 <div className="cart-item-actions">
                     <Counter 
                         value={item.quantity}
@@ -32,7 +29,6 @@ const CartItem = ({ item }) => {
                     </button>
                 </div>
 
-                {/* Итог */}
                 <div className="cart-item-total">
                     ${(item.price * item.quantity).toFixed(2)}
                 </div>

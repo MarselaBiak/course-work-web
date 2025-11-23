@@ -8,8 +8,6 @@ import Order from "../models/Order.js";
 const router = express.Router();
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-
-// 👉 Создание Stripe Checkout Session
 router.post("/create-checkout-session", async (req, res) => {
     try {
         const { items, sellerNotes, giftMessage, userId } = req.body;
@@ -26,7 +24,6 @@ router.post("/create-checkout-session", async (req, res) => {
             quantity: item.quantity,
         }));
 
-        // Создаем Stripe Session
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ["card"],
             line_items,
@@ -35,7 +32,6 @@ router.post("/create-checkout-session", async (req, res) => {
             cancel_url: "http://localhost:5173/cart",
         });
 
-        // Создаем заказ в базе
         const order = await Order.create({
             userId,
             items,
@@ -52,7 +48,6 @@ router.post("/create-checkout-session", async (req, res) => {
     }
 });
 
-// 👉 Подтверждение оплаты после webhook
 router.post("/confirm", async (req, res) => {
     const { session_id } = req.body;
 

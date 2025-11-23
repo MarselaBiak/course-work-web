@@ -3,12 +3,6 @@ import Product from "../models/Product.js";
 
 const router = express.Router();
 
-/*
-====================================
- GET /api/products
- Получить все товары
-====================================
-*/
 router.get("/", async (req, res) => {
     try {
         const products = await Product.find();
@@ -19,13 +13,6 @@ router.get("/", async (req, res) => {
     }
 });
 
-
-/*
-====================================
- GET /api/products/search?q=rose
- Поиск товаров
-====================================
-*/
 router.get("/search", async (req, res) => {
     try {
         const query = req.query.q?.trim() || "";
@@ -50,13 +37,6 @@ router.get("/search", async (req, res) => {
     }
 });
 
-
-/*
-====================================
- GET /api/products/:id
- Получить один товар по id
-====================================
-*/
 router.get("/:id", async (req, res) => {
     try {
         const product = await Product.findOne({ id: req.params.id });

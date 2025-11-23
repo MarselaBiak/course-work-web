@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -31,8 +30,6 @@ const Catalog = () => {
     return (
         <div className={`home-page ${isMenuOpen ? "menu-open" : ""}`}>
 
-
-            {/* ---------- MOBILE MENU ---------- */}
             <div className={`side-menu ${isMenuOpen ? "open" : ""}`}>
                 <button className="close-menu-btn" onClick={() => setIsMenuOpen(false)}>×</button>
 
@@ -43,7 +40,6 @@ const Catalog = () => {
                     <Link to="/catalog">Catalog</Link>
                     <Link to="/contacts">Contacts</Link>
 
-                    {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ ЗАЛОГИНЕН === */}
                     {!user && (
                         <>
                             <Link to="/signin" className="bold">Sign in</Link>
@@ -51,7 +47,6 @@ const Catalog = () => {
                         </>
                     )}
 
-                    {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ ЗАЛОГИНЕН === */}
                     {user && (
                         <div className="user-block">
                             <Link to="/settings" >
@@ -66,25 +61,20 @@ const Catalog = () => {
 
             </div>
 
-            {/* ---------- OVERLAY (тёмный фон) ---------- */}
             {isMenuOpen && (
                 <div className="menu-overlay" onClick={() => setIsMenuOpen(false)}></div>
             )}
 
-            {/* ---------- HEADER ---------- */}
             <header className="main-header">
                 <div className="header-inner">
                     
-                    {/* LEFT — burger */}
                     <button className="header-burger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         <span className="span-1-header"></span>
                         <span className="span-2-header"></span>
                     </button>
 
-                    {/* CENTER — logo */}
                     <img className="logo-header" src={logoHeader} alt="logo" />
 
-                    {/* RIGHT — icons */}
                     <div className="header-right">
                         <Link to="/search">
                             <button className="icon-button">
@@ -106,14 +96,11 @@ const Catalog = () => {
                 </div>
             </header>
 
-            {/* ---------- PRODUCTS ---------- */}
-
             <section className="top-rated" id="features">
             <h2 className="top-title-catalog">Catalog</h2>
 
             <div className="top-grid">
 
-                {/* -- CARD 1 -- */}
                 <div className="top-card">
                     <Link to="/product/1" >
                         <div className="product1"></div>
@@ -127,7 +114,6 @@ const Catalog = () => {
                     </div>
                 </div>
 
-                {/* -- CARD 2 -- */}
                 <div className="top-card">
                     <Link to="/product/2" >
                         <div className="product2"></div>
@@ -141,7 +127,6 @@ const Catalog = () => {
                     </div>
                 
                 </div>            
-                {/* -- CARD 3 -- */}
                 <div className="top-card">
                     <Link to="/product/3" >
                         <div className="product3"></div>
@@ -155,7 +140,6 @@ const Catalog = () => {
                     </div>
                 </div>
 
-                {/* -- CARD 4 -- */}
                 <div className="top-card">
                 <Link to="/product/4" >
                     <div className="product4"></div>
@@ -169,7 +153,6 @@ const Catalog = () => {
                     </div>
                 </div>
 
-                {/* -- CARD 5 -- */}
                 <div className="top-card">
                     <Link to="/product/5" >
                         <div className="product5"></div>
@@ -183,7 +166,6 @@ const Catalog = () => {
                     </div>
                 </div>
 
-                {/* -- CARD 6 -- */}
                 <div className="top-card">
                 <Link to="/product/6" >
                     <div className="product6"></div>

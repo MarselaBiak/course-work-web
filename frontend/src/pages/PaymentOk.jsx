@@ -45,8 +45,6 @@ export default function PaymentOk() {
     return (
         <div className={`home-page ${isMenuOpen ? "menu-open" : ""}`}>
 
-
-            {/* ---------- MOBILE MENU ---------- */}
             <div className={`side-menu ${isMenuOpen ? "open" : ""}`}>
                 <button className="close-menu-btn" onClick={() => setIsMenuOpen(false)}>×</button>
 
@@ -57,7 +55,6 @@ export default function PaymentOk() {
                     <Link to="/catalog">Catalog</Link>
                     <Link to="/contacts">Contacts</Link>
 
-                    {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ ЗАЛОГИНЕН === */}
                     {!user && (
                         <>
                             <Link to="/signin" className="bold">Sign in</Link>
@@ -65,7 +62,6 @@ export default function PaymentOk() {
                         </>
                     )}
 
-                    {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ ЗАЛОГИНЕН === */}
                     {user && (
                         <div className="user-block">
                             <Link to="/settings" >
@@ -80,25 +76,20 @@ export default function PaymentOk() {
 
             </div>
 
-            {/* ---------- OVERLAY (тёмный фон) ---------- */}
             {isMenuOpen && (
                 <div className="menu-overlay" onClick={() => setIsMenuOpen(false)}></div>
             )}
 
-            {/* ---------- HEADER ---------- */}
             <header className="main-header">
                 <div className="header-inner">
                     
-                    {/* LEFT — burger */}
                     <button className="header-burger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         <span className="span-1-header"></span>
                         <span className="span-2-header"></span>
                     </button>
 
-                    {/* CENTER — logo */}
                     <img className="logo-header" src={logoHeader} alt="logo" />
 
-                    {/* RIGHT — icons */}
                     <div className="header-right">
                         <Link to="/search">
                             <button className="icon-button">
@@ -120,15 +111,12 @@ export default function PaymentOk() {
                 </div>
             </header>
 
-            {/* ---------- HERO SECTION ---------- */}
             <main className="hero-buy">
                 <h2 className="hero-buy-h2">Thank you for your order! </h2>
                 <p className="hero-buy-p">To view your orders, go to your profile.</p>
                 <Link to="/catalog" className="hero-buy-btn">Continue shopping</Link>
 
             </main>
-
-            
 
             <footer className="footer-bar">
                 <img src={logo2} alt="" />

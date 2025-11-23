@@ -15,7 +15,7 @@ const OrderSchema = new mongoose.Schema({
     sellerNotes: String,
     giftMessage: String,
     stripeSessionId: String,
-    status: { type: String, default: "pending" }, // pending / paid
+    status: { type: String, default: "pending" }, 
 }, { timestamps: true });
 
 export default mongoose.model("Order", OrderSchema);

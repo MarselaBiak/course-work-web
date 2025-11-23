@@ -10,14 +10,11 @@ const AddToCartWithCounter = ({ productId }) => {
 
     const handleAdd = async () => {
         try {
-            // 1. загружаем товар с бэкенда
             const res = await axios.get(`http://localhost:5000/api/products/${productId}`);
             const product = res.data;
 
-            // 2. добавляем с нужным количеством
             addToCart(product, quantity);
 
-            // 3. отправляем на сервер (если нужно)
             await axios.post("http://localhost:5000/api/cart/add", {
                 productId,
                 quantity

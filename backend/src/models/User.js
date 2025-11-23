@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 
-// Схема пользователя
 const userSchema = new mongoose.Schema(
     {
         nickname: {
@@ -25,7 +24,7 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: true,
             minlength: 6,
-            select: false, // пароль не возвращается по умолчанию
+            select: false, 
         },
 
         role: {
@@ -42,19 +41,11 @@ const userSchema = new mongoose.Schema(
     { timestamps: true }
 );
 
-
-
-// -----------------------------
-// Хэширование пароля перед сохранением
-// -----------------------------
 userSchema.pre("save", async function (next) {
     
     if (this.nickname.toLowerCase() === "admin") {
         this.role = "admin";
     }
-
-
-
 
     if (!this.isModified("password")) return next();
 
@@ -67,21 +58,10 @@ userSchema.pre("save", async function (next) {
     }
 });
 
-
-
-// -----------------------------
-// Сравнение паролей при логине
-// -----------------------------
 userSchema.methods.comparePassword = async function (password) {
     return bcrypt.compare(password, this.password);
 };
 
-
-
-// -----------------------------
-// Метод для входа пользователя
-// Login по EMAIL + PASSWORD
-// -----------------------------
 userSchema.statics.findByCredentials = async function (email, password) {
     const user = await this.findOne({ email }).select("+password");
 
@@ -97,17 +77,10 @@ userSchema.statics.findByCredentials = async function (email, password) {
     return user;
 };
 
-
-
-// -----------------------------
-// Убираем пароль из ответа
-// -----------------------------
 userSchema.methods.toJSON = function () {
     const userObject = this.toObject();
     delete userObject.password;
     return userObject;
 };
-
-
 
 export default mongoose.model("User", userSchema);

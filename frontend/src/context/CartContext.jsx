@@ -7,20 +7,15 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
-    // Загружаем из localStorage
     useEffect(() => {
         const saved = JSON.parse(localStorage.getItem("cart")) || [];
         setCart(saved);
     }, []);
 
-    // Сохраняем изменения
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart));
     }, [cart]);
 
-    // ============================
-    // ДОБАВЛЕНИЕ ТОВАРА
-    // ============================
     const addToCart = (product, quantity) => {
         setCart(prev => {
             const existing = prev.find(item => item.id === product.id);
@@ -37,9 +32,6 @@ export const CartProvider = ({ children }) => {
         });
     };
 
-    // ============================
-    // НОВОЕ — ОБНОВЛЕНИЕ КОЛИЧЕСТВА
-    // ============================
     const updateQuantity = (id, quantity) => {
         setCart(prev =>
             prev.map(item =>
@@ -48,16 +40,10 @@ export const CartProvider = ({ children }) => {
         );
     };
 
-    // ============================
-    // НОВОЕ — УДАЛЕНИЕ ТОВАРА
-    // ============================
     const removeItem = (id) => {
         setCart(prev => prev.filter(item => item.id !== id));
     };
 
-    // ============================
-    // СУММА КОРЗИНЫ
-    // ============================
     const totalPrice = cart.reduce(
         (sum, item) => sum + item.price * item.quantity,
         0
@@ -67,8 +53,8 @@ export const CartProvider = ({ children }) => {
         <CartContext.Provider value={{ 
             cart, 
             addToCart, 
-            updateQuantity,   // ⭐ новое
-            removeItem,       // ⭐ новое
+            updateQuantity, 
+            removeItem,       
             totalPrice 
         }}>
             {children}

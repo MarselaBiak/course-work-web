@@ -12,14 +12,10 @@ import AddToCartWithCounter from "../components/AddToCartWithCounter";
 import { useCart } from "../context/CartContext";
 import "./ProductPage.css";
 
-
-// ВАЖНО — импортируем картинку товара!
-
 const Product4Page = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const user = JSON.parse(localStorage.getItem("user"));
-
 
     const handleLogout = () => {
     localStorage.removeItem("token");
@@ -56,7 +52,6 @@ const Product4Page = () => {
     return (
         <div className={`home-page ${isMenuOpen ? "menu-open" : ""}`}>
             
-            {/* ---------- MOBILE MENU ---------- */}
             <div className={`side-menu ${isMenuOpen ? "open" : ""}`}>
                 <button className="close-menu-btn" onClick={() => setIsMenuOpen(false)}>×</button>
 
@@ -67,7 +62,6 @@ const Product4Page = () => {
                     <Link to="/catalog">Catalog</Link>
                     <Link to="/contacts">Contacts</Link>
 
-                    {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ ЗАЛОГИНЕН === */}
                     {!user && (
                         <>
                             <Link to="/signin" className="bold">Sign in</Link>
@@ -75,7 +69,6 @@ const Product4Page = () => {
                         </>
                     )}
 
-                    {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ ЗАЛОГИНЕН === */}
                     {user && (
                         <div className="user-block">
                             <Link to="/settings" >
@@ -87,10 +80,8 @@ const Product4Page = () => {
                         </div>
                     )}
                 </nav>
-
             </div>
 
-            {/* HEADER */}
             <header className="main-header">
                 <div className="header-inner">
 
@@ -121,7 +112,6 @@ const Product4Page = () => {
                 </div>
             </header>
 
-            {/* PRODUCT PAGE */}
             <main className="hero-product">
                 <div className="product-h1-cont">
                     <h2 className="product-h1">Home / Cristal (pink carnations with mix flowers)</h2>
@@ -173,7 +163,6 @@ const Product4Page = () => {
                 </div>
             </section>
                     
-            {/* FOOTER */}
             <footer className="footer-bar">
                 <img src={logo2} alt="" />
                 <p className="footer-bar-text">

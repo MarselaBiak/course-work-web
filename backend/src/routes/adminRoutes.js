@@ -17,18 +17,14 @@ import Order from "../models/Order.js";
 
 const router = express.Router();
 
-// ===== USERS =====
 router.get("/users", authMiddleware, adminOnly, getAllUsers);
 router.delete("/users/:id", authMiddleware, adminOnly, deleteUser);
 
-// ===== ALL ORDERS =====
 router.get("/orders", authMiddleware, adminOnly, getAllOrders);
 router.delete("/orders/:id", authMiddleware, adminOnly, deleteOrder);
 
-// ===== ORDERS GROUPED BY USERS =====
 router.get("/orders-by-users", authMiddleware, adminOnly, getOrdersByUsers);
 
-// ===== DELETE ITEM IN ORDER =====
 router.delete(
     "/orders/:orderId/items/:itemId",
     authMiddleware,
@@ -36,7 +32,6 @@ router.delete(
     deleteOrderItem
 );
 
-// ===== UPDATE ITEM QUANTITY =====
 router.put(
     "/orders/:orderId/items/:itemId",
     authMiddleware,
@@ -44,7 +39,6 @@ router.put(
     updateOrderItemQty
 );
 
-// ===== FULL USER → ORDERS STRUCTURE =====
 router.get("/user-orders", adminOnly, async (req, res) => {
     try {
         const users = await User.find({}, "_id nickname email");
@@ -61,6 +55,5 @@ router.get("/user-orders", adminOnly, async (req, res) => {
         res.status(500).json({ message: "Server error" });
     }
 });
-
 
 export default router;

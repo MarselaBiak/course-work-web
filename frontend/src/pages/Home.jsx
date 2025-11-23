@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import AddToCartButton from "../components/AddToCartButton";
@@ -39,9 +38,6 @@ const Home = () => {
 
     return (
         <div className={`home-page ${isMenuOpen ? "menu-open" : ""}`}>
-
-
-            {/* ---------- MOBILE MENU ---------- */}
             <div className={`side-menu ${isMenuOpen ? "open" : ""}`}>
                 <button className="close-menu-btn" onClick={() => setIsMenuOpen(false)}>×</button>
 
@@ -52,7 +48,6 @@ const Home = () => {
                     <Link to="/catalog">Catalog</Link>
                     <Link to="/contacts">Contacts</Link>
 
-                    {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ ЗАЛОГИНЕН === */}
                     {!user && (
                         <>
                             <Link to="/signin" className="bold">Sign in</Link>
@@ -60,7 +55,6 @@ const Home = () => {
                         </>
                     )}
 
-                    {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ ЗАЛОГИНЕН === */}
                     {user && (
                         <div className="user-block">
                             <Link to="/settings" >
@@ -75,32 +69,26 @@ const Home = () => {
 
             </div>
 
-            {/* ---------- OVERLAY (тёмный фон) ---------- */}
             {isMenuOpen && (
                 <div className="menu-overlay" onClick={() => setIsMenuOpen(false)}></div>
             )}
 
-            {/* ---------- HEADER ---------- */}
             <header className="main-header">
                 <div className="header-inner">
                     
-                    {/* LEFT — burger */}
                     <button className="header-burger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         <span className="span-1-header"></span>
                         <span className="span-2-header"></span>
                     </button>
 
-                    {/* CENTER — logo */}
                     <img className="logo-header" src={logoHeader} alt="logo" />
 
-                    {/* RIGHT — icons */}
                     <div className="header-right">
                         <Link to="/search">
                             <button className="icon-button">
                                 <img src={searchIcon} alt="search" />
                             </button>
                         </Link>
-
 
                         <Link to="/cart">
                             <button className="cart-button">
@@ -116,13 +104,10 @@ const Home = () => {
                 </div>
             </header>
 
-            {/* ---------- HERO SECTION ---------- */}
             <main className="hero">
 
-                {/* left petal */}
                 <img src={leftPetal} alt="" className="petal petal-left" />
 
-                {/* right petal */}
                 <img src={rightPetal} alt="" className="petal petal-right" />
 
                 <div className="hero-content">
@@ -149,8 +134,6 @@ const Home = () => {
 
             </main>
 
-
-            {/* ---------- INFO STRIP ---------- */}
             <section className="info-strip">
                 <div className="info-item">
                     <div className="info-cont">
@@ -169,14 +152,11 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* ---------- PRODUCTS ---------- */}
-
             <section className="top-rated" id="features">
             <h2 className="top-title">TOP RATED</h2>
 
             <div className="top-grid">
 
-                {/* -- CARD 1 -- */}
                 <div className="top-card">
                     <Link to="/product/1" >
                         <div className="product1"></div>
@@ -190,7 +170,6 @@ const Home = () => {
                     </div>
                 </div>
 
-                {/* -- CARD 2 -- */}
                 <div className="top-card">
                     <Link to="/product/2" >
                         <div className="product2"></div>
@@ -202,9 +181,8 @@ const Home = () => {
                         </div>
                         <AddToCartButton className="btn-dark" productId={2} />
                     </div>
+                </div>   
                 
-                </div>            
-                {/* -- CARD 3 -- */}
                 <div className="top-card">
                     <Link to="/product/3" >
                         <div className="product3"></div>
@@ -218,7 +196,6 @@ const Home = () => {
                     </div>
                 </div>
 
-                {/* -- CARD 4 -- */}
                 <div className="top-card">
                 <Link to="/product/4" >
                     <div className="product4"></div>
@@ -232,7 +209,6 @@ const Home = () => {
                     </div>
                 </div>
 
-                {/* -- CARD 5 -- */}
                 <div className="top-card">
                     <Link to="/product/5" >
                         <div className="product5"></div>
@@ -246,7 +222,6 @@ const Home = () => {
                     </div>
                 </div>
 
-                {/* -- CARD 6 -- */}
                 <div className="top-card">
                 <Link to="/product/6" >
                     <div className="product6"></div>
@@ -259,7 +234,6 @@ const Home = () => {
                         <AddToCartButton className="btn-dark" productId={6} />
                     </div>
                 </div>
-
             </div>
             
             <div className="top-more-wrap">

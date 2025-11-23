@@ -7,13 +7,11 @@ import searchIcon from "../assets/home-page/search_icon.png";
 import balanceIcon from "../assets/home-page/balace_icon.png";
 import { useCart } from "../context/CartContext";
 
-
 const SignUp = () => {
     
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const user = JSON.parse(localStorage.getItem("user"));
-    
 
     const handleLogout = () => {
     localStorage.removeItem("token");
@@ -31,7 +29,6 @@ const SignUp = () => {
     const [error, setError] = useState("");
     const navigate = useNavigate();
 
-    //  handleRegister
     const handleRegister = async () => {
         setError("");
 
@@ -82,8 +79,6 @@ const SignUp = () => {
     return (
         <div className={`home-page ${isMenuOpen ? "menu-open" : ""}`}>
         
-        
-                {/* ---------- MOBILE MENU ---------- */}
                 <div className={`side-menu ${isMenuOpen ? "open" : ""}`}>
                     <button className="close-menu-btn" onClick={() => setIsMenuOpen(false)}>×</button>
 
@@ -94,7 +89,6 @@ const SignUp = () => {
                         <Link to="/catalog">Catalog</Link>
                         <Link to="/contacts">Contacts</Link>
 
-                        {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ ЗАЛОГИНЕН === */}
                         {!user && (
                             <>
                                 <Link to="/signin" className="bold">Sign in</Link>
@@ -102,7 +96,6 @@ const SignUp = () => {
                             </>
                         )}
 
-                        {/* === ЕСЛИ ПОЛЬЗОВАТЕЛЬ ЗАЛОГИНЕН === */}
                         {user && (
                             <div className="user-block">
                                 <Link to="/settings" >
@@ -116,26 +109,21 @@ const SignUp = () => {
                     </nav>
 
                 </div>
-        
-                    {/* ---------- OVERLAY (тёмный фон) ---------- */}
+
                     {isMenuOpen && (
                         <div className="menu-overlay" onClick={() => setIsMenuOpen(false)}></div>
                     )}
         
-                    {/* ---------- HEADER ---------- */}
                     <header className="main-header">
                         <div className="header-inner">
                             
-                            {/* LEFT — burger */}
                             <button className="header-burger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                                 <span className="span-1-header"></span>
                                 <span className="span-2-header"></span>
                             </button>
         
-                            {/* CENTER — logo */}
                             <img className="logo-header" src={logoHeader} alt="logo" />
         
-                            {/* RIGHT — icons */}
                             <div className="header-right">
                                 <Link to="/search">
                                     <button className="icon-button">
@@ -157,13 +145,9 @@ const SignUp = () => {
                         </div>
                     </header>
         
-                    {/* ---------- HERO SECTION ---------- */}
                     <main className="hero">
                         <div className="hero-content">
                             <h1 className="signup">Sign up</h1>
-
-                            
-
                             <div className="inputs-signup-block">
                                 <div className="text-input-signup">
                                     <p>nickname</p>
@@ -187,7 +171,6 @@ const SignUp = () => {
                                 </div>
                             </div>
                             <button className="btn-hero" onClick={handleRegister}>sign up</button>
-                            {/* Ошибка */}
                             
                             {error && (
                                 <p style={{ color: "red", 

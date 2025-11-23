@@ -5,8 +5,6 @@ import User from "../models/User.js";
 
 const router = express.Router();
 
-
-// ===================== SIGN UP =====================
 router.post("/signup", async (req, res) => {
     console.log("SIGNUP REQUEST BODY:", req.body);
 
@@ -21,18 +19,15 @@ router.post("/signup", async (req, res) => {
     }
 
     try {
-        // Проверяем, существует ли пользователь
         const existing = await User.findOne({ email });
         if (existing) {
             return res.status(400).json({ message: "Email already exists" });
         }
 
-        // Создаём пользователя — хеширования вручную НЕ НУЖНО!
-        // Потому что модель User.js сама делает hash в pre("save")
         const user = await User.create({
             nickname: nickname || "",
             email,
-            password,  // <-- обычный пароль (будет захеширован автоматически)
+            password, 
             agree
         });
 
@@ -46,9 +41,6 @@ router.post("/signup", async (req, res) => {
     }
 });
 
-
-
-// ===================== LOGIN =====================
 router.post("/login", async (req, res) => {
     console.log("LOGIN REQUEST BODY:", req.body);
 
@@ -59,7 +51,6 @@ router.post("/login", async (req, res) => {
     }
 
     try {
-        // Важно! select("+password") потому что в User.js поле скрыто
         const user = await User.findOne({ email }).select("+password");
 
         if (!user) {
@@ -67,7 +58,6 @@ router.post("/login", async (req, res) => {
             return res.status(400).json({ message: "User not found" });
         }
 
-        // Сравниваем пароли
         const isMatch = await bcrypt.compare(password, user.password);
 
         if (!isMatch) {
@@ -75,7 +65,6 @@ router.post("/login", async (req, res) => {
             return res.status(400).json({ message: "Wrong password" });
         }
 
-        // Создаем JWT
         const token = jwt.sign(
             { id: user._id, role: user.role },
             process.env.JWT_SECRET,
@@ -98,6 +87,5 @@ router.post("/login", async (req, res) => {
         return res.status(500).json({ message: "Server error" });
     }
 });
-
 
 export default router;
