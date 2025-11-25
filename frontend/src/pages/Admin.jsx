@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/set-state-in-effect */
 import "./About.css";
 import "./Admin.css";
@@ -7,7 +8,6 @@ import axios from "axios";
 
 const Admin = () => {
     const [users, setUsers] = useState([]);
-    // eslint-disable-next-line no-unused-vars
     const [userOrders, setUserOrders] = useState([]);
 
     const loadUsers = async () => {
