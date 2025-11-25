@@ -36,7 +36,7 @@ const Admin = () => {
             headers: { Authorization: `Bearer ${token}` }
         });
 
-        loadUserOrders();
+        loadOrdersByUsers();
     };
 
     const updateQty = async (orderId, productId, newQty) => {
