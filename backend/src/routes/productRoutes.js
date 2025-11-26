@@ -18,7 +18,7 @@ router.get("/search", async (req, res) => {
         const query = req.query.q?.trim() || "";
 
         if (!query) {
-            return res.json([]); // пустая строка → ничего не ищем
+            return res.json([]); 
         }
 
         const regex = new RegExp(query, "i");
