@@ -43,7 +43,7 @@ const SignIn = () => {
 
             if (res.data.token) {
                 localStorage.setItem("token", res.data.token);
-                localStorage.setItem("user", JSON.stringify(res.data.user)); // 🎯 сохраняем ROLE
+                localStorage.setItem("user", JSON.stringify(res.data.user)); 
             }
 
             if (res.data.user.role === "admin") {
